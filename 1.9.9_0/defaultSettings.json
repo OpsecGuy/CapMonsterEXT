@@ -1,0 +1,47 @@
+{
+    "isEnabled": true,
+    "clientKey": "PROVIDE_HERE_UR_KEY",
+    "captchaList": [
+        "ReCaptcha2",
+        "ReCaptcha3",
+        "ReCaptchaEnterprise",
+        "HCaptcha",
+        "Turnstile"
+    ],
+    "captchaExtra": {
+        "ReCaptcha2": 1,
+        "HCaptcha": 1,
+        "FunCaptcha": 1
+    },
+    "repeatsCount": 0,
+    "isEnabledIgnoreList": false,
+    "ignoreList": [],
+    "proxy": {
+        "isEnabled": false,
+        "type": "http",
+        "address": "",
+        "port": 3128,
+        "login": "",
+        "password": ""
+    },
+    "isManualResolving": false,
+    "delayAfterLoadPage": 2,
+    "recaptchaClickSelector": ".recaptcha-checkbox-checkmark",
+    "hCaptchaClickSelector": "div#checkbox",
+    "globalVariable": "CMExtension",
+    "delayStartCount": {
+        "ReCaptcha2": 0,
+        "HCaptcha": 0,
+        "FunCaptcha": 0
+    },
+    "autoClick": {
+        "ReCaptcha2": true,
+        "HCaptcha": true,
+        "FunCaptcha": true
+    },
+    "autoSolve": {
+        "ReCaptcha2": true,
+        "HCaptcha": true,
+        "FunCaptcha": true
+    }
+}
