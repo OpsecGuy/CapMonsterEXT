@@ -1,22 +1,15 @@
 from extension import Extension
 from seleniumbase import Driver
 
-import os, time
+import os
 
 
 class Browser():
     def __init__(self,
-                 target_url: str,
-                 headless: bool=False,
-                 bypass: bool=False,
-                 proxy: str=None) -> None:
-
+                 target_url: str) -> None:
 
         self.target_url = target_url
-        self.headless = headless
-        self.bypass = bypass
-        self.proxy = proxy
-        self.extension_dir = os.getcwd() + '\\1.9.9_0'
+        self.extension_dir = os.getcwd() + '\\1.9.9_0' # 1.9.9_0 Newest extension version
         self.session = self.spawn_browser()
         self.ext = Extension(self.session)
 
@@ -56,6 +49,14 @@ class Browser():
 
 
 
-
+if __name__ == '__main__':
+    browser = Browser(target_url='https://google.com',
+                      headless=False,
+                      proxy=None)
+    
+    print(browser.ext.extension_state())
+    print(browser.get_current_url())
+    
+    
 
 
