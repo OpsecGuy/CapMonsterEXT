@@ -122,5 +122,20 @@ class Extension:
         """
         self.set_value(f"CMExtension.autoSolve['{solver}'] = {str(value).lower()}")
 
+    def get_solver_button(self):
+        try:
+            return self.session.find_element(by=By.XPATH, value="//span[contains(text(),'Solve captcha')]")
+        except Exception:
+            return False
+
+    def click_solver_button(self):
+        try:
+            self.session.find_element(by=By.XPATH, value="//span[contains(text(),'Solve captcha')]").click()
+        except Exception:
+            return False
+
+    def is_solver_running(self) -> bool:
+        command = 'return document.documentElement.innerText.indexOf("In process...")'
+        return False if int(self.session.execute_script(command)) == -1 else True
 
 
